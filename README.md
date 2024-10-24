@@ -1,13 +1,12 @@
-# Makefile Generator for ANY 'uni-stc' based STC MCU Project
+# CMake files Generator for 'pico-sdk' projects
 
-Python program to automate the generation of the necessary CMake files to ease the compilation, AUTOMATICALLY UPDATING CMakeLists.txt file and upload of any rp2040, rp2350 board.
+Python program to automate the generation of the necessary CMake files to ease the compilation, automatically update CMakeLists.txt file and upload of any rp2040, rp2350 board.
 
-By updating CMakeLists.txt file, I mean it will automatically see all the *.c files in your directory AND all the `#includes` from the 'pico-sdk' folder and automagically put the necessary files in the CMakeLists.txt folder.
-For example, if you have 'gpio.c' and 'main.c' in your folder and you've included 
+By updating CMakeLists.txt file, I mean it will automatically see all the *.c files in your directory and remove them if removed from folder.
 
-IMP: This script basically does the exact steps mentioned in the "getting-started-with-pico.pdf" under section "Manually Create your own Project" on page-37.
+**IMP**: This script basically does the exact steps mentioned in the "getting-started-with-pico.pdf" under section "Manually Create your own Project" on page-37.
 
-IMP: the `PICO_SDK_PATH` environment variable MUST BE DEFINED to be the path to the 'pico-sdk' folder.
+**IMP**: the `PICO_SDK_PATH` environment variable MUST BE DEFINED to be the path to the 'pico-sdk' folder.
 
 ## What is does:
   - create empty 'main.c'
@@ -15,7 +14,7 @@ IMP: the `PICO_SDK_PATH` environment variable MUST BE DEFINED to be the path to 
   - copies the 'pico_sdk_import.cmake' into project folder from the `PICO_SDK_PATH` folder
   - create 'build/' folder
   - runs `cmake ..` in the 'build/' folder
-  - using the `update` parameter, it will update the CMakeLists.txt file with the newest executables and libraries needed
+  - using the `update` parameter, it will update the CMakeLists.txt file with the current executables
 
 
 ## Installation:
@@ -34,12 +33,12 @@ or
 
 ## Usage: 
 
-To creates the Makefile and the Makefiles directory with all the necessary Makfiles
+To prepare the project directory:
 
     rpproject new <board_name>
 
-`board_name` are the same board names named in the 'pico-sdk' folder
+`board_name` are the any of the board names named in the 'pico-sdk/src/boards/include/boards' folder
 
-To Updates the CMakeLists.mk Makefile with the current project needed source files
+To Updates the CMakeLists.mk Makefile with the current source files:
 
     rpproject update 
