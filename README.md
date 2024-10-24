@@ -15,6 +15,7 @@ IMP: the `PICO_SDK_PATH` environment variable MUST BE DEFINED to be the path to 
   - copies the 'pico_sdk_import.cmake' into project folder from the `PICO_SDK_PATH` folder
   - create 'build/' folder
   - runs `cmake ..` in the 'build/' folder
+  - using the `update` parameter, it will update the CMakeLists.txt file with the newest executables and libraries needed
 
 
 ## Installation:
