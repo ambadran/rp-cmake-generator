@@ -42,3 +42,12 @@ To prepare the project directory:
 To Updates the CMakeLists.mk Makefile with the current source files:
 
     rpproject update 
+
+#TODOs:
+  - finish `update` command
+  - give option to auto-connect pico w with wifi using the `-DWIFI_SSID="Your Network"
+-DWIFI_PASSWORD="Your Password"` options in CMake
+  - implement `make upload` instead of `picotool load -f <executable>.uf2`
+  - implement `make console` instead of `picocom -b 115200 /dev/ttyACM0`
+
+
